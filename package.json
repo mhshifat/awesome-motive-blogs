@@ -1,0 +1,27 @@
+{
+  "name": "awesome-motive-blogs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "client:dev": "npm start --prefix client",
+    "server:dev": "nodemon ./src/index.js",
+    "serve": "concurrently --kill-others \"npm run server:dev\" \"npm run client:dev\"",
+    "packages:install": "npm install && npm install --prefix client",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.10"
+  },
+  "devDependencies": {
+    "concurrently": "^7.1.0",
+    "nodemon": "^2.0.15"
+  }
+}
