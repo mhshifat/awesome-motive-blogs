@@ -120,10 +120,8 @@ app.get("/api/posts/:postId/comments/:commentId/comments", async (req, res) => {
 });
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "client", "build"))
+    res.sendFile(path.join(__dirname, "..", "client", "build", "index.html"));
 })
-
-console.log(path.join(__dirname, "..", "client", "build"));
 
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
